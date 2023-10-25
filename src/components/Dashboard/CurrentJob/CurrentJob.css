@@ -1,0 +1,11 @@
+#current-job{
+    width: 250px;
+    height: 250px;
+    outline: red 1px solid;
+}
+
+.dashboard-container {
+  width: 100px;
+  height: 33px;
+  outline: red 1px;
+}

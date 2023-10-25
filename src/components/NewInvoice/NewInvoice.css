@@ -1,0 +1,8 @@
+#new-invoice-form {}
+
+#new-invoice-container {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+}
+  

@@ -1,5 +1,9 @@
 export default function Invoices() {
   return (
-    <div>Invoices</div>
+    <>
+      <div id='invoices'>
+        <h1>Invoices</h1>
+      </div>
+    </>
   );
 }

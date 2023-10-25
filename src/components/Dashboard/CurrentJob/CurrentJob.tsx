@@ -1,7 +1,16 @@
+
+
+import './CurrentJob.css';
+
 export default function CurrentJob() {
   return (
     <>
-      <div>CurrentJob</div>
+      <div id='current-job'>
+        <h2>Current Job</h2>
+        <div className='dashboard-container'>
+          
+        </div>
+      </div>
     </>
   );
 }

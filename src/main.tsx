@@ -9,47 +9,65 @@ import Dashboard from './components/Dashboard/Dashboard.tsx';
 import Summary from './components/Dashboard/Summary/Summary.tsx';
 import CurrentJob from './components/Dashboard/CurrentJob/CurrentJob.tsx';
 
-import Invoices from './components/Invoices/Invoices.tsx';
-import Invoice from './components/Invoices/Invoice.tsx';
+import Appointments from './components/Appointments/Appointments.tsx';
 
 import Customers from './components/Customers/Customers.tsx';
 import Customer from './components/Customers/Customer.tsx';
 
-import './index.css'
+import Invoices from './components/Invoices/Invoices.tsx';
+import Invoice from './components/Invoices/Invoice.tsx';
+
+import NewInvoice from './components/NewInvoice/NewInvoice.tsx';
+
+import './index.css';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Root />,
     errorElement: <Error />,
     children: [
       {
-        path: "/dashboard",
+        path: 'dashboard',
         element: <Dashboard />,
         children: [
           {
-            path: '/current-job',
+            path: 'current-job',
             element: <CurrentJob />
           },
           {
-            path: '/summary',
+            path: 'summary',
             element: <Summary />
           },
         ]
       },
       {
-        path: "/invoices",
+        path: 'appointments',
+        element: <Appointments />,
+      },
+      {
+        path: 'invoices',
         element: <Invoices />,
         children: [
           {
-            path: '/invoice',
+            path: 'invoice',
             element: <Invoice/>
           },
         ]
       },
       {
-        path: "/customers",
+        path: 'customers',
         element: <Customers />,
+        children: [
+          {
+            path: 'customer/:id',
+            element: <Customer />
+          }
+        ]
+      },
+      {
+        path: 'new-invoice',
+        element: <NewInvoice />,
       },
     ],
   },

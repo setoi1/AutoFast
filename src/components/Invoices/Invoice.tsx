@@ -1,7 +1,7 @@
 export default function Invoice() {
   return (
     <>
-      <div>Invoice</div>
+      <div id='invoice-content'>Invoice Content</div>
     </>
   );
 }
