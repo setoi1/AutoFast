@@ -10,6 +10,8 @@ import Summary from './components/Dashboard/Summary/Summary.tsx';
 import CurrentJob from './components/Dashboard/CurrentJob/CurrentJob.tsx';
 
 import Appointments from './components/Appointments/Appointments.tsx';
+import Appointment from './components/Appointments/Appointment.tsx';
+import NewJob from './components/Appointments/NewJob.tsx';
 
 import Customers from './components/Customers/Customers.tsx';
 import Customer from './components/Customers/Customer.tsx';
@@ -32,25 +34,31 @@ const router = createBrowserRouter([
         element: <Dashboard />,
         children: [
           {
-            path: 'current-job',
-            element: <CurrentJob />
+            path: 'current-job/:id',
+            element: <CurrentJob />,
           },
           {
             path: 'summary',
-            element: <Summary />
+            element: <Summary />,
           },
-        ]
+        ],
       },
       {
         path: 'appointments',
         element: <Appointments />,
+        children: [
+          {
+            path: 'appointment/:id',
+            element: <Appointment />,
+          }
+        ],
       },
       {
         path: 'invoices',
         element: <Invoices />,
         children: [
           {
-            path: 'invoice',
+            path: 'invoice/:id',
             element: <Invoice/>
           },
         ]

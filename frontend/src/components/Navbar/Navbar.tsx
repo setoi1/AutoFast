@@ -5,7 +5,7 @@ import './Navbar.css';
 
 export default function Navbar() {
 
-  const [active, setActive] = useState(true);
+  const [active, setActive] = useState(true); 
 
   return (
     <>
