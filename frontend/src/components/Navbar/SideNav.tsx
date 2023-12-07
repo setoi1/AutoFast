@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import './Navbar.css';
+import './SideNav.css';
 
-export default function Navbar() {
-
+export default function SideNav() {
   const [active, setActive] = useState(true); 
 
   return (

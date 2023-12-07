@@ -48,7 +48,7 @@ const router = createBrowserRouter([
         element: <Appointments />,
         children: [
           {
-            path: 'appointment/:id',
+            path: ':id',
             element: <Appointment />,
           }
         ],
@@ -58,7 +58,11 @@ const router = createBrowserRouter([
         element: <Invoices />,
         children: [
           {
-            path: 'invoice/:id',
+            path: 'new-invoice',
+            element: <NewInvoice />,
+          },
+          {
+            path: ':id',
             element: <Invoice/>
           },
         ]
@@ -68,14 +72,10 @@ const router = createBrowserRouter([
         element: <Customers />,
         children: [
           {
-            path: 'customer/:id',
+            path: ':id',
             element: <Customer />
           }
         ]
-      },
-      {
-        path: 'new-invoice',
-        element: <NewInvoice />,
       },
     ],
   },

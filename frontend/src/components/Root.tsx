@@ -1,14 +1,15 @@
 import { Outlet } from 'react-router-dom';
-import Navbar from './Navbar/Navbar';
 
 import './Root.css';
+import TopNav from './Navbar/TopNav';
+import SideNav from './Navbar/SideNav';
 
 export default function Root() {
-  
   return (
     <>
+      <TopNav />
       <div id='sidebar'>
-        <Navbar />
+        <SideNav />
       </div>
       <div id='content'>
         <Outlet />
