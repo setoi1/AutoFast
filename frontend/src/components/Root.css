@@ -1,3 +1,9 @@
-#content {  
+#content { 
   width: 100vw;
+  height: 100vh;
+  margin-top: 4rem;
+}
+
+#outlet {
+  margin-left: 12rem;
 }

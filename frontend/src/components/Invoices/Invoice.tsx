@@ -1,7 +1,10 @@
+import { Outlet } from 'react-router-dom';
+
 export default function Invoice() {
   return (
     <>
-      <div id='invoice-content'>Invoice Content</div>
+      <h1>Hello</h1>
+      <Outlet />
     </>
   );
 }

@@ -1,37 +1,50 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import './SideNav.css';
 
-export default function SideNav() {
-  const [active, setActive] = useState(true); 
+const navItems = [
+  {
+    id: 0,
+    icon: '',
+    text: 'Dashboard',
+  },
+  {
+    id: 1,
+    icon: '',
+    text: 'Appointments',
+  },
+  {
+    id: 2,
+    icon: '',
+    text: 'Invoices',
+  },
+  {
+    id: 3,
+    icon: '',
+    text: 'Customers',
+  },
+  {
+    id: 4,
+    icon: '',
+    text: 'VIN Lookup',
+  },
+  {
+    id: 5,
+    icon: '',
+    text: 'Vehicle Database',
+  },
+]
 
+export default function SideNav() {
   return (
-    <>
-      <button onClick={() => active ? setActive(false) : setActive(true)} />
-      {active ? 
-        <nav id='sidebar-expanded'>
-          <ul id='sidebar-list'>
-            <li className='sidebar-item'>
-              <Link to={`dashboard`}>Dashboard</Link>
-            </li>
-            <li className='sidebar-item'>
-              <Link to={`appointments`}>Appointments</Link>
-            </li>
-            <li className='sidebar-item'>
-              <Link to={`invoices`}>Invoices</Link>
-            </li>
-            <li className='sidebar-item'>
-              <Link to={`customers`}>Customers</Link>
-            </li>
-            <li className='sidebar-item'>
-              <Link to={`new-invoice`}>New Invoice</Link>
-            </li>
-          </ul>
-        </nav>
-       : 
-        <nav id='sidebar'></nav>
-      }
-    </>
+    <nav id='sidebar'>
+      <ul id='sidebar-list'>
+        {navItems.map(navItem =>
+          <li key={navItem.id} className='sidebar-list-item'>
+            <Link className='sidebar-list-text' to={``}>{navItem.icon}{navItem.text}</Link>
+          </li>
+        )}
+      </ul>
+    </nav>
   );
 }

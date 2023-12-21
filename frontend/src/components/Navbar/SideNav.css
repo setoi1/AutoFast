@@ -1,15 +1,38 @@
 #sidebar {
+  position: fixed;
   width: 12rem;
-  height: calc(100vh - 6rem);
+  height: 100vh;
   background-color: #232D3F;
+}
+
+#sidebar-list {
+  height: 100%;
+  padding-top: 2rem;
   display: flex;
   flex-direction: column;
 }
 
-#sidebar-expanded {
-  width: 20rem;
+.sidebar-list-item {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
+.sidebar-list-text {
+  text-decoration: none;
+  color: white;
+  transition-duration: .25s;
+}
+
+.sidebar-list-text:hover {
+  opacity: .75;
+  transition-duration: .25s;
+}
+
+
+
+
+/*
 #sidebar > * {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -126,3 +149,4 @@ i {
 #sidebar nav a.pending {
   color: hsl(224, 98%, 58%);
 }
+*/

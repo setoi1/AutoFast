@@ -3,17 +3,28 @@ import { Outlet } from 'react-router-dom';
 import './Root.css';
 import TopNav from './Navbar/TopNav';
 import SideNav from './Navbar/SideNav';
+import Landing from './Landing/Landing';
 
 export default function Root() {
+  const isAuth = false;
+
   return (
     <>
       <TopNav />
-      <div id='sidebar'>
-        <SideNav />
-      </div>
-      <div id='content'>
-        <Outlet />
-      </div>
+      {isAuth ? 
+        ( 
+          <>
+            <SideNav />
+            <div id='outlet'>
+              <Outlet />
+            </div>
+          </>
+        ) 
+        :
+        (
+          <Landing />
+        ) 
+      }
     </>
   );
 }

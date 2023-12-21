@@ -1,5 +1,46 @@
 #top-nav-header {
   width: 100%;
-  height: 6rem;
-  background-color: red;
+  z-index: 1;
+  position: fixed;
+  top: 0;
 }
+
+  .top-nav {
+    width: 100%;
+    height: 4rem;
+    background-color: red;
+  }
+
+    .top-nav-list {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      color: white;
+    }
+      
+      .top-nav-logo {
+        width: 12rem;
+        font-size: 2em;
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        font-style: italic;
+      }
+
+      .top-nav-search {
+        width: 100%;
+      }
+
+      .top-nav-input {
+        width: 100%;
+        border-radius: 4rem;
+      }
+
+      .top-nav-profile {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 2rem;
+        border-radius: 1rem;
+      }
