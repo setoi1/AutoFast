@@ -27,7 +27,7 @@ namespace controller_api.Controllers
             return await _context.Invoices.ToListAsync();
         }
 
-        // GET: api/Invoices/5
+        // GET: api/Invoices/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<Invoices>> GetInvoices(long id)
         {
@@ -41,8 +41,17 @@ namespace controller_api.Controllers
             return invoices;
         }
 
-        // PUT: api/Invoices/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // POST: api/Invoices
+        [HttpPost]
+        public async Task<ActionResult<Invoices>> PostInvoices(Invoices invoices)
+        {
+            _context.Invoices.Add(invoices);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetInvoices", new { id = invoices.Id }, invoices);
+        }
+
+        // PUT: api/Invoices/{id}
         [HttpPut("{id}")]
         public async Task<IActionResult> PutInvoices(long id, Invoices invoices)
         {
@@ -72,18 +81,7 @@ namespace controller_api.Controllers
             return NoContent();
         }
 
-        // POST: api/Invoices
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Invoices>> PostInvoices(Invoices invoices)
-        {
-            _context.Invoices.Add(invoices);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetInvoices", new { id = invoices.Id }, invoices);
-        }
-
-        // DELETE: api/Invoices/5
+        // DELETE: api/Invoices/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteInvoices(long id)
         {

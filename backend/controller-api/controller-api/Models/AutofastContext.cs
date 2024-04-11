@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.EntityFrameworkCore;
-using controller_api.Models;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace controller_api.Models
 {
